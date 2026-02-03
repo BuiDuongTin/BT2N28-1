@@ -1,27 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test Posts & Comments</title>
+  <script src="main.js"></script>
+  <style>
+    table { border-collapse: collapse; width: 100%; margin-bottom: 1rem; }
+    td, th { border: 1px solid #ddd; padding: 6px; }
+    thead { background: #f7f7f7; }
+  </style>
 </head>
 <body>
-    <div>
-        <table>
-            <thead>
+  <h2>Posts</h2>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Title</th><th>Views</th><th>Actions</th></tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+  </table>
 
-            </thead>
-            <tbody id="table-body">
+  <div>
+    <h3>Form Post (để trống ID để tạo mới)</h3>
+    <input type="text" id="id_txt" placeholder="ID (để trống để tạo mới)"/><br/>
+    <input type="text" id="title_txt" placeholder="Title"/><br/>
+    <input type="number" id="view_txt" placeholder="Views"/><br/>
+    <input type="button" value="Save post" onclick="Save()"/>
+  </div>
 
-            </tbody>
-        </table>
-    </div> 
-    <div>
-        <input type="text" id="id_txt"/>
-        <input type="text" id="title_txt"/>
-        <input type="text" id="view_txt"/>
-        <input type="submit" value="submit" onclick="Save()"/>
-    </div>   
+  <hr/>
+
+  <h2>Comments</h2>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Post ID</th><th>Content</th><th>Actions</th></tr>
+    </thead>
+    <tbody id="comment-body">
+    </tbody>
+  </table>
+
+  <div>
+    <h3>Form Comment (để trống ID để tạo mới)</h3>
+    <input type="text" id="comment_id_txt" placeholder="Comment ID (để trống để tạo mới)"/><br/>
+    <input type="text" id="comment_postid_txt" placeholder="Post ID (bắt buộc)"/><br/>
+    <textarea id="comment_content_txt" placeholder="Nội dung"></textarea><br/>
+    <input type="button" value="Save comment" onclick="SaveComment()"/>
+  </div>
 </body>
 </html>
